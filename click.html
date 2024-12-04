@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click</title>
+    <style>
+        html,body{
+            display: flex;
+            gap: 30px;
+        }
+        #quadrado{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <button id="contagem">Contagem:</button>
+
+    <div id="quadrado"></div>
+    <button id="quadcor">Mudar Cor do quadrado</button>
+    <script>
+        const btn =  document.querySelector('#contagem')
+        let ctn = 0;
+        btn.addEventListener('click', ()=>{
+            ctn ++
+            btn.textContent = `Contagem: ${ctn}`
+        })
+
+        const btnquad = document.getElementById('quadcor')
+        const quad = document.getElementById('quadrado')
+
+        btnquad.addEventListener('click', ()=>{
+        //Os estilos que tem - no css são escritos com a segunda palavra começando com maiscula
+        if(quad.style.backgroundColor == 'red'){
+            quad.style.backgroundColor ='blue';
+        }else{
+            quad.style.backgroundColor ='red';
+        }
+        })
+    </script>
+</body>
+</html>

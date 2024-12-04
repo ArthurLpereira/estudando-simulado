@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionando Elementos</title>
+    <style>
+        .quadrado{
+            background-color: red;
+            width: 100px;
+            height: 100px;
+        }
+        #quad{
+            background-color: aqua;
+            width: 100px;
+            height: 100px;
+        }
+        .circulo{
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <button id="mudando_texto"></button>
+    <div class="circulo"></div>
+
+    <br>
+
+    <a href="https://www.youtube.com/">Link</a>
+
+    <button class="btns">aaaaaaaa</button>
+    <button class="btns">aaaaaaaa</button>
+    <button class="btns">aaaaaaaa</button>
+    <button class="btns">aaaaaaaa</button>
+    <button class="btns">aaaaaaaa</button>
+
+    <br><br>
+
+    <button class="class">bbbbbbb</button>
+    <button class="class">bbbbbbb</button>
+    <button class="class">bbbbbbb</button>
+    <button class="class">bbbbbbb</button>
+    <button class="class">bbbbbbb</button>
+
+    <script>
+    // MUDANDO O TEXTO
+     const btn_mudarTxt = document.getElementById('mudando_texto')
+    btn_mudarTxt.innerText = ('Texto alterado com js')
+    btn_mudarTxt.addEventListener('click', ()=>{
+        btn_mudarTxt.innerText = ('texto mudado com js de novo')
+    })
+    //Adicionando tag
+    let novaDiv = document.createElement('div')
+    novaDiv.innerText = 'Texto legal    '
+    document.body.appendChild(novaDiv)
+
+    //Adicionando Classes
+    const cir = document.querySelector('.circulo')
+    cir.classList.remove('circulo')
+    cir.classList.add('quadrado')
+    // ID
+    novaDiv.id = 'quad'
+    // mudando atributos
+    const link = document.querySelector('a')
+    link.setAttribute('href', 'https://www.instagram.com/')
+
+    // quando tem mais que um
+    let btns = document.querySelectorAll('.btns')
+    btns.forEach(function(btn){
+        btn.addEventListener('click',()=>{
+            alert('o botão foi clicado btns foi clicado')
+        })
+    })
+    
+    let btnclass = document.querySelectorAll('.class')
+    for(i = 0; i < btnclass.length; i++){
+        btnclass[i].addEventListener('click', ()=>{
+            alert('o botão class foi clicado')
+        })
+    }
+
+    // Como adicionar antes de algo
+    let novaDivv = document.createElement("div");
+    novaDivv.innerText = "Nova Div";
+
+    // Seleciona o elemento que você quer que fique logo após a nova div
+    let elementoDeReferencia = document.getElementById("elementoExistente");
+
+    document.body.insertBefore(novaDivv, elementoDeReferencia);  // Insere a nova div antes do elemento de referência
+
+    </script>
+</body>
+</html>

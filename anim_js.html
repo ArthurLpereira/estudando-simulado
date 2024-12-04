@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animação js</title>
+    <style>
+        .quadrado{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            transition: top 2s linear, left 2s linear; /* Animação suave */
+            top: 30px;
+            left: 10px;
+        }
+        button{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button>Clique em mim</button>
+    <div class="quadrado"></div>
+    <script>
+        const btn = document.querySelector('button')
+        const quad = document.querySelector('.quadrado')
+        btn.addEventListener('click', ()=>{
+            quad.style.backgroundColor = 'green'
+            quad.style.top = '80%'
+            quad.style.left = '90%'
+        })
+    </script>
+</body>
+</html>
